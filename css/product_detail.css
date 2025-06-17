@@ -1,92 +1,123 @@
 /* File: css/product_detail.css */
 /* Style khusus untuk halaman detail produk */
 
-.product-detail-layout {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr; /* Kolom gambar sedikit lebih kecil */
-    gap: 40px;
-    align-items: flex-start;
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
+/* --- Layout Utama Detail Produk (2 Kolom) --- */
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom dengan lebar sama */
+    gap: 40px; /* Jarak antar kolom */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+/* --- Kolom Gambar --- */
 .product-image-container {
-    position: sticky;
-    top: 80px; /* Jarak dari atas (setelah navbar) */
+    text-align: center;
 }
-.product-card .product-card-image {
-    width: 160px; /* Lebar gambar selalu 100% dari lebar .product-card */
-    height: 160px; /* Tentukan tinggi yang seragam. Ubah angka ini sesuai selera. */
-    object-fit: cover; /* Properti kunci: scale gambar agar pas, potong sisanya, tanpa merusak rasio */
-    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
-    border-bottom: 1px solid #f0f0f0; /* Garis pemisah tipis antara gambar dan konten */
-}
+
 .product-detail-main-image {
-    margin-top: 50px;
     width: 100%;
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     border: 1px solid #eee;
 }
 
-.product-info-container .product-title {
-    font-size: 2.2em;
-    color: #de8047;
-    margin: 0 0 10px 0;
-    line-height: 1.2;
+/* --- Kolom Info Produk --- */
+.product-info-container {
+    color: #333;
 }
 
-.related-activity-link {
-    font-size: 0.9em;
-    color: #343640;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.product-price-detail {
-    font-size: 1.8em;
+.product-title {
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #de8047;
+    color: #1C1d23; /* Hitam pekat untuk judul */
     margin-bottom: 10px;
 }
 
-.product-stock-detail {
-    font-size: 1em;
+.related-activity-link {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.product-price-detail {
+    font-size: 2rem;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: inline-block;
+    color: #de8047; /* Warna aksen oranye/tan */
+    margin-bottom: 15px;
+}
+
+.product-stock-detail {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 25px;
 }
 .product-stock-detail.in-stock {
-    background-color: #e6ffe6;
-    color: #3c763d;
+    color: #28a745; /* Hijau untuk stok tersedia */
 }
 .product-stock-detail.out-of-stock {
-    background-color: #f8d7da;
-    color: #721c24;
+    color: #dc3545; /* Merah untuk stok habis */
 }
 
 .product-description {
-    margin-top: 25px;
     line-height: 1.7;
-    color: #444;
+    color: #555;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
 }
 
+/* --- Tombol Aksi --- */
 .product-action-box {
     margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #f0f0f0;
 }
 
 .btn-add-to-cart {
-    padding: 12px 25px;
-    font-size: 1.1em;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #343640; /* Warna gelap dari tema */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Responsif */
-@media (max-width: 768px) {
+.btn-add-to-cart:hover {
+    background-color: #1C1d23;
+    transform: scale(1.02);
+}
+
+#add-to-cart-message {
+    margin-top: 15px;
+}
+
+/* Link kembali ke daftar produk */
+.page-container > p {
+    text-align: center;
+    margin-top: 40px;
+}
+.btn-link {
+    background-color: #666774;
+    color: #f1f1f1;
+}
+
+/* --- Penyesuaian untuk Layar Kecil (Mobile) --- */
+@media (max-width: 992px) {
     .product-detail-layout {
-        grid-template-columns: 1fr; /* Ubah jadi 1 kolom */
-    }
-    .product-image-container {
-        position: static; /* Hapus sticky di mobile */
+        grid-template-columns: 1fr; /* Ubah menjadi 1 kolom */
     }
 }

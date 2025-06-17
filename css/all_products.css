@@ -1,35 +1,51 @@
 /* File: css/all_products.css */
-/* Berisi style yang HANYA digunakan di halaman semua produk */
+/* Style untuk halaman daftar semua produk */
 
-.all-products-list-container {
-    padding-top: 20px;
+/* --- Layout Utama Halaman Daftar --- */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
-.all-items-view.product-grid {
+.page-title {
+    color: #DDB59A;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #c7c8c8;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- Grid untuk Daftar Produk --- */
+.product-grid.all-items-view {
     display: grid;
-    /* Membuat 2-4 kolom tergantung lebar layar */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px; /* Jarak antar kartu */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-/* Menggunakan kembali style .product-card dari global.css */
-/* Namun, kita bisa menambahkan sedikit penyesuaian jika perlu */
-.all-items-view .product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+/* --- Styling Kartu Produk (Konsisten dengan Index) --- */
+.product-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Menggunakan flex untuk struktur di dalamnya */
+    flex-direction: column;
 }
 
-.all-items-view .product-card:hover {
+.product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-.all-items-view .product-card-link {
+.product-card-link {
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -37,51 +53,85 @@
     height: 100%;
 }
 
-.all-items-view .product-card-image {
+.product-card-image {
     width: 100%;
-    height: 200px; /* Tinggi gambar seragam */
+    height: 220px;
     object-fit: cover;
 }
 
-.all-items-view .product-card-content {
-    padding: 15px;
-    flex-grow: 1; /* Memastikan konten mengisi sisa ruang */
+.product-card-content {
+    padding: 20px;
+    text-align: left; /* Teks rata kiri agar lebih rapi */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.all-items-view .product-card-title {
-    font-size: 1.1em;
+.product-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
     color: #333;
     margin-bottom: 8px;
 }
 
-.all-items-view .product-item-price {
-    font-size: 1em;
-    color: #007BFF;
+.product-item-price {
+    font-size: 1.1rem;
+    color: #de8047; /* Warna aksen oranye/tan */
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.all-items-view .product-card-desc {
-    font-size: 0.9em;
-    color: #666;
-    line-height: 1.5;
-    flex-grow: 1; /* Mendorong tombol ke bawah */
     margin-bottom: 15px;
 }
 
-.all-items-view .btn-view-detail-small {
-    display: inline-block;
-    align-self: flex-start; /* Tombol rata kiri */
-    padding: 8px 15px;
-    background-color: #343640;
-    color: #DDB59A;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
+.product-card-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1; /* Deskripsi mengisi ruang kosong */
+    margin-bottom: 20px;
 }
-.all-items-view .btn-view-detail-small:hover {
-    color: #343640;
+
+.btn-view-detail-small {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #343640;
+    color: #c7c8c8;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Tombol rata kiri */
+}
+
+.btn-view-detail-small:hover {
     background-color: #DDB59A;
+    color: #FFFFFF;
+}
+
+/* --- Styling Paginasi (Sama seperti halaman list activities) --- */
+.pagination-container {
+    margin-top: 50px;
+}
+
+.pagination .page-link {
+    background-color: #666774;
+    border-color: #4a4c57;
+    color: #f1f1f1;
+    margin: 0 2px;
+    border-radius: 5px;
+}
+
+.pagination .page-link:hover {
+    background-color: #4a4c57;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #d8a07c;
+    border-color: #d8a07c;
+    color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #343640;
+    border-color: #4a4c57;
+    color: #6c757d;
 }

@@ -170,11 +170,11 @@ $main_activity_categories = [
             </div>
             <div class="contact-info-wrapper">
                 <div class="social-icons">
-                    <a href="#"><img src="<?php echo BASE_URL; ?>images/linkedin.png" alt="LinkedIn"></a>
-                    <a href="#"><img src="<?php echo BASE_URL; ?>images/tik-tok.png" alt="TikTok"></a>
-                    <a href="#"><img src="<?php echo BASE_URL; ?>images/twitter.png" alt="X/Twitter"></a>
-                    <a href="#"><img src="<?php echo BASE_URL; ?>images/youtube.png" alt="YouTube"></a>
-                    <a href="#"><img src="<?php echo BASE_URL; ?>images/instagram.png" alt="Instagram"></a>
+                    <a href="linkedin.in/bakinglovers"><img src="<?php echo BASE_URL; ?>images/linkedin.png" alt="LinkedIn"></a>
+                    <a href="tiktok.com/bakinglovers"><img src="<?php echo BASE_URL; ?>images/tik-tok.png" alt="TikTok"></a>
+                    <a href="x.com/bakinglovers"><img src="<?php echo BASE_URL; ?>images/twitter.png" alt="X/Twitter"></a>
+                    <a href="youtube.com/bakinglovers"><img src="<?php echo BASE_URL; ?>images/youtube.png" alt="YouTube"></a>
+                    <a href="instagram.com/bakinglovers"><img src="<?php echo BASE_URL; ?>images/instagram.png" alt="Instagram"></a>
                 </div>
                 <p class="contact-detail"><img src="<?php echo BASE_URL; ?>images/phone-call.png" alt="Phone"> +62 878 9827 2631</p>
                 <p class="contact-detail"><img src="<?php echo BASE_URL; ?>images/email.png" alt="Email"> trial123@gmail.com</p>

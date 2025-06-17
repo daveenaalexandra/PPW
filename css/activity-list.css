@@ -1,29 +1,48 @@
 /* File: css/activity-list.css */
-/* Berisi style yang digunakan di semua halaman daftar kegiatan */
+/* Style untuk halaman list_workshops.php, list_classes.php, dan list_competition.php */
 
-.activity-list-container {
-    padding-top: 20px;
+/* --- Layout Utama Halaman Daftar --- */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
+.page-title {
+    color: #DDB59A; /* Warna tan hangat dari tema Anda */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #c7c8c8; /* Warna abu-abu terang untuk sub-judul */
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- Grid untuk Daftar Kegiatan --- */
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Jarak antar kartu */
 }
 
+/* --- Styling Kartu Kegiatan (Konsisten dengan Index) --- */
 .activity-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px nerdy-google-colors-for-website rgba(0,0,0,0.1);
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .activity-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 .activity-card-link {
@@ -48,50 +67,78 @@
 }
 
 .activity-card-title {
-    font-size: 1.25em;
-    color: #004A99;
-    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 50px; /* Beri tinggi minimum agar sejajar */
 }
 
 .activity-card-desc {
-    font-size: 0.9em;
+    font-size: 0.95rem;
     color: #555;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: 15px;
-    flex-grow: 1;
+    flex-grow: 1; /* Deskripsi akan mengisi ruang kosong */
 }
 
 .activity-card-footer {
-    margin-top: auto; /* Mendorong footer ke bawah */
-    padding-top: 15px;
     border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    margin-top: auto; /* Mendorong footer ke bagian bawah kartu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .activity-card-info {
-    font-size: 0.85em;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: left;
 }
 
-/* PERUBAHAN TAMPILAN TOMBOL MENJADI LINK */
-.activity-card .btn-view-detail-small {
-    display: inline-block !important;
-    background: none !important; /* Memaksa latar belakang transparan */
-    border: none !important; /* Memaksa tanpa border */
-    padding: 2px 0 !important; /* Memberi sedikit ruang vertikal */
-    
-    color: #6a0dad !important; /* Memaksa warna ungu */
-    font-weight: bold !important;
-    font-size: 0.9em !important;
-    
-    text-align: left !important;
-    text-decoration-thickness: 2px !important;
-    
-    border-radius: 0 !important; /* Hapus sudut melingkar */
-    transition: color 0.3s;
+/* Tombol "Lihat Detail" di dalam kartu */
+.btn-view-detail-small {
+    padding: 8px 18px;
+    background-color: #343640;
+    color: #c7c8c8;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
 }
 
-.activity-card-link:hover .btn-view-detail-small {
-    color: #4b0082 !important; /* Warna ungu lebih gelap saat di-hover */
+.btn-view-detail-small:hover {
+    background-color: #DDB59A;
+    color: #FFFFFF;
+}
+
+/* --- Styling Paginasi Bootstrap (Agar Sesuai Tema) --- */
+.pagination-container {
+    margin-top: 50px;
+}
+
+.pagination .page-link {
+    background-color: #666774; /* Latar belakang tombol abu-abu */
+    border-color: #4a4c57;
+    color: #f1f1f1; /* Warna teks putih keabuan */
+    margin: 0 2px;
+    border-radius: 5px;
+}
+
+.pagination .page-link:hover {
+    background-color: #4a4c57;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #d8a07c; /* Warna aksen tan untuk halaman aktif */
+    border-color: #d8a07c;
+    color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #343640;
+    border-color: #4a4c57;
+    color: #6c757d;
 }

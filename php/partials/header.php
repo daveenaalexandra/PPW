@@ -33,6 +33,7 @@ $current_page_for_nav = basename($_SERVER['PHP_SELF']);
     else if ($currentPage == 'cart.php') { echo '<link rel="stylesheet" href="' . BASE_URL . 'css/cart.css">'; }
     else if ($currentPage == 'checkout.php') { echo '<link rel="stylesheet" href="' . BASE_URL . 'css/checkout.css">'; }
     else if ($currentPage == 'product_detail.php') { echo '<link rel="stylesheet" href="' . BASE_URL . 'css/product_detail.css">'; }
+    else if ($currentPage == 'search_results.php') {echo '<link rel="stylesheet" href="' . BASE_URL . 'css/search_results.css">';}
     else if (in_array($currentPage, ['admin_dashboard.php','manage_orders.php', 'manage_activities.php', 'edit_activity.php', 'manage_products.php', 'manage_users.php'])) {echo '<link rel="stylesheet" href="' . BASE_URL . 'css/admin.css">';}
     ?>
 </head>

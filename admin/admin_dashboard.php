@@ -85,10 +85,6 @@ require_once __DIR__ . '/../php/partials/header.php';
             </a>
         </div>
     </div>
-
-    <div class="text-center mt-3">
-        <p style="color: rgba(255, 255, 255, 0.7);">Gunakan menu dropdown di pojok kanan atas untuk mengelola data.</p>
-    </div>
 </div>
 
 <?php

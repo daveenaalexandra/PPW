@@ -400,3 +400,10 @@
     box-sizing: border-box; /* Penting untuk menyertakan padding dan border dalam lebar */
 }
 
+.contact-detail {
+    gap: 20px; /* Jarak antar detail kontak */
+    display: flex;
+    font-size: 0.9rem;
+    color: #DDB59A; /* Warna teks untuk detail kontak */
+    margin-bottom: 10px; /* Spasi antar detail */
+}

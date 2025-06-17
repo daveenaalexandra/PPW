@@ -1,46 +1,49 @@
 /* File: css/cart.css */
-/* Style khusus untuk halaman keranjang belanja */
+/* Style khusus untuk halaman cart.php dengan penyesuaian warna */
 
-body {
-    background-color: #d0dae9; /* Ganti dengan kode warna yang Anda inginkan */
+/* --- Layout Utama Halaman Keranjang --- */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
-.cart-empty {
+
+.page-title {
+    color: #DDB59A;
     text-align: center;
-    padding: 40px;
+    margin-bottom: 40px;
 }
 
-.cart-empty p {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-
+/* --- Layout Grid (Daftar Item & Ringkasan) --- */
 .cart-container {
     display: grid;
-    grid-template-columns: 2fr ; /* Kolom item lebih besar dari kolom summary */
+    grid-template-columns: 2fr ;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* Daftar Item di Keranjang */
-.cart-items-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* --- Styling Item di Keranjang (Dark Mode Card) --- */
+.cart-container h3 {
+    font-weight: bold;
+    color: #e9ecef;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #666774;
 }
 
-.cart-item {
+.cart-item.card-style {
+    background-color: #343640; /* PERUBAHAN: Latar kartu menjadi gelap */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4a4c57; /* Border lebih gelap */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    flex-wrap: wrap; /* Agar responsif */
+    flex-wrap: wrap;
     gap: 15px;
-    background-color: #343640;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    overflow: hidden;
-    /* flex-direction: column; */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cart-item__details {
@@ -48,175 +51,119 @@ body {
 }
 
 .cart-item__name {
-    margin: 0 0 10px 0;
-    color: #004A99;
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #DDB59A; /* PERUBAHAN: Warna aksen tan untuk judul item */
+    margin: 0 0 5px 0;
 }
 
 .cart-item__price, .cart-item__subtotal {
+    font-size: 1rem;
+    color: #e9ecef; /* PERUBAHAN: Warna teks terang */
     margin: 0;
-    color: #555;
-    font-size: 0.95em;
 }
 
-.cart-item__subtotal {
-    font-weight: bold;
-    color: #333;
-    margin-top: 5px;
-}
-
+/* --- Styling Form Aksi (Qty, Hapus) --- */
 .cart-item__actions {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
 }
 
-.cart-item__actions .update-cart-form {
+form.update-cart-form {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.qty-input {
+form.update-cart-form .qty-input {
     width: 60px;
     padding: 5px 8px;
+    border: 1px solid #666774;
+    border-radius: 5px;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: #4a4c57; /* PERUBAHAN: Latar input gelap */
+    color: #fff; /* PERUBAHAN: Teks input terang */
 }
 
-/* Ringkasan Belanja */
-.cart-summary {
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+/* --- Styling Kotak Ringkasan Belanja (Dark Mode) --- */
+.cart-summary.card-style {
+    background-color: #343640; /* PERUBAHAN: Latar menjadi gelap */
+    border: 1px solid #d8a07c; /* PERUBAHAN: Border dengan warna aksen */
     padding: 25px;
-    position: sticky; /* Agar tetap terlihat saat scroll */
-    top: 80px; /* Jarak dari atas (setelah navbar) */
-    text-align: center;
+    border-radius: 15px;
+    position: sticky;
+    top: 90px;
 }
 
 .cart-summary h3 {
-    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #e9ecef; /* PERUBAHAN: Teks terang */
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .cart-summary__total {
-    font-size: 1.8em;
+    font-size: 2rem;
     font-weight: bold;
-    color: #007bff;
-    margin-bottom: 20px;
+    color: #de8047; /* Warna aksen tan/oranye tetap */
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .cart-summary .btn-submit-user-form {
+    background-color: #d8a07c; /* PERUBAHAN: Tombol utama pakai warna aksen */
+    color: #1C1d23; /* PERUBAHAN: Teks tombol menjadi gelap agar kontras */
     width: 100%;
+}
+.cart-summary .btn-submit-user-form:hover {
+    background-color: #DDB59A;
+    color: #1C1d23;
 }
 
 .cart-summary__continue {
-    display: inline-block;
-    margin-top: 15px;
-}
-/* File: css/cart.css */
-/* ... (kode lain yang sudah ada di cart.css) ... */
-
-/* ============================================== */
-/* == Style untuk setiap item di keranjang == */
-/* ============================================== */
-
-/* Kontainer utama untuk satu item */
-.cart-item {
-    display: flex;
-    justify-content: space-between; /* Mendorong detail & aksi ke sisi berlawanan */
-    align-items: center; /* Menjaga semuanya sejajar secara vertikal */
-    padding: 20px;
-    flex-wrap: wrap; /* Agar responsif di layar kecil */
-    gap: 15px; /* Jarak jika baris baru terbentuk */
-}
-
-/* Bagian Kiri: Detail Produk (Nama, Harga) */
-.cart-item__details {
-    flex-grow: 1; /* Biarkan bagian ini membesar mengisi ruang */
-}
-
-.cart-item__name {
-    margin: 0 0 10px 0;
-    color: #d78460; /* Warna biru tua untuk judul */
-    font-size: 1.3em; /* Sedikit lebih besar */
-    font-weight: bold;
-}
-
-.cart-item__price, .cart-item__subtotal {
-    margin: 4px 0 0 0;
-    color: #fff;
-    font-size: 1em;
-}
-
-.cart-item__subtotal {
-    font-weight: bold;
-    color: #cf9c87; /* Warna oranye untuk subtotal */
-}
-
-/* Bagian Kanan: Tombol Aksi (Update Qty, Hapus) */
-.cart-item__actions {
-    display: flex;
-    flex-direction: column; /* Menyusun form update dan hapus secara vertikal */
-    align-items: flex-end; /* Membuat semuanya rata kanan */
-    gap: 10px; /* Jarak antara form update dan tombol hapus */
-}
-
-/* Form untuk mengubah kuantitas */
-.cart-item__actions .update-cart-form {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Jarak antara label "Qty:", input, dan tombol "Update" */
-}
-
-.cart-item__actions label {
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-.qty-input {
-    width: 60px;
-    padding: 8px;
+    display: block;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+    margin-top: 15px;
+    color: #c7c8c8; /* PERUBAHAN: Teks terang */
+    text-decoration: none;
+}
+.cart-summary__continue:hover {
+    text-decoration: underline;
 }
 
-/* Menyesuaikan Tombol Kecil (btn-sm) jika perlu */
-.btn-sm {
-    padding: 8px 15px;
-    font-size: 0.9em;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    transition: background-color 0.2s, border-color 0.2s;
+/* --- Pesan Keranjang Kosong --- */
+.cart-empty.message.info {
+    grid-column: 1 / -1;
+    background-color: rgba(102, 103, 116, 0.5);
+    border: 1px solid #666774;
+    color: #f1f1f1;
 }
 
-/* Anda mungkin sudah memiliki ini di global.css, ini hanya penegasan */
-.btn-sm.btn-danger {
-    background-color: #d9534f;
-    color: white;
-    border-color: #d43f3a;
-}
-.btn-sm.btn-danger:hover {
-    background-color: #c9302c;
-}
-
-/* Responsif untuk layar kecil */
+/* --- Penyesuaian untuk Layar Kecil (Mobile) --- */
 @media (max-width: 992px) {
     .cart-container {
-        grid-template-columns: 1fr; /* Ubah jadi 1 kolom */
+        grid-template-columns: 1fr;
     }
 }
-
 @media (max-width: 576px) {
-    .cart-item {
+    .cart-item.card-style {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
     .cart-item__actions {
-        width: 100%;
-        align-items: flex-start;
         margin-top: 15px;
+        justify-content: space-between;
     }
 }

@@ -1,5 +1,5 @@
 <?php
-// Ambil kata kunci pencarian dari URL, pastikan aman
+// Ambil kata kunci pencarian dari URL, pastikan aman dari XSS
 $search_query = isset($_GET['q']) ? trim($_GET['q']) : '';
 $safe_search_query = htmlspecialchars($search_query);
 
@@ -11,10 +11,10 @@ $activities_found = [];
 
 // Lakukan pencarian hanya jika query tidak kosong
 if (!empty($search_query)) {
-    // Persiapkan term pencarian untuk query LIKE
+    // Persiapkan term pencarian untuk query LIKE agar bisa mencari kata di mana saja
     $search_term = "%" . $search_query . "%";
 
-    // 1. Cari di tabel 'products'
+    // 1. Cari di tabel 'products' berdasarkan nama atau deskripsi
     $stmt_products = $conn->prepare("SELECT * FROM products WHERE product_name LIKE ? OR description LIKE ?");
     $stmt_products->bind_param("ss", $search_term, $search_term);
     $stmt_products->execute();
@@ -24,7 +24,7 @@ if (!empty($search_query)) {
     }
     $stmt_products->close();
 
-    // 2. Cari di tabel 'activities'
+    // 2. Cari di tabel 'activities' berdasarkan judul atau deskripsi
     $stmt_activities = $conn->prepare("SELECT * FROM activities WHERE title LIKE ? OR description LIKE ?");
     $stmt_activities->bind_param("ss", $search_term, $search_term);
     $stmt_activities->execute();
@@ -37,7 +37,7 @@ if (!empty($search_query)) {
 ?>
 
 <div class="container page-container">
-    <h1 class="page-title">Hasil Pencarian untuk: "<?php echo $safe_search_query; ?>"</h1>
+    <h1 class="page-title">Hasil Pencarian untuk: <span>"<?php echo $safe_search_query; ?>"</span></h1>
 
     <?php if (empty($products_found) && empty($activities_found)): ?>
         <div class="message info">
@@ -46,7 +46,7 @@ if (!empty($search_query)) {
     <?php else: ?>
 
         <?php if (!empty($products_found)): ?>
-            <h3 class="mt-4">Produk yang Ditemukan (<?php echo count($products_found); ?>)</h3>
+            <h3 class="results-section-header">Produk yang Ditemukan <span>(<?php echo count($products_found); ?>)</span></h3>
             <div class="search-results-grid">
                 <?php foreach ($products_found as $product): ?>
                     <div class="product-card">
@@ -64,7 +64,7 @@ if (!empty($search_query)) {
         <?php endif; ?>
 
         <?php if (!empty($activities_found)): ?>
-            <h3 class="mt-5">Kegiatan yang Ditemukan (<?php echo count($activities_found); ?>)</h3>
+            <h3 class="results-section-header">Kegiatan yang Ditemukan <span>(<?php echo count($activities_found); ?>)</span></h3>
             <div class="search-results-grid">
                 <?php foreach ($activities_found as $activity): ?>
                     <div class="activity-card">

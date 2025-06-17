@@ -425,22 +425,26 @@ main {
     background-color: #f1f1f1;
 }
 
-/* Tampilkan dropdown ketika JavaScript menambahkan kelas 'show' */
-.dropdown.show .dropdown-content {
-    display: block;
+/* ========================================= */
+/* Penyesuaian Style Dropdown (BARU)         */
+/* ========================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
 .dropbtn {
     background-color: transparent;
-    color: #d8a07c !important; /* Warna biru muda agar menonjol, !important untuk override */
+    color: #d8a07c !important; 
     padding: 14px 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px; /* Spasi antara teks dan panah */
-    font-weight: bold; /* Agar mirip dengan "PROFILE (BAKER_PRO)" */
+    gap: 5px;
+    font-weight: bold;
     transition: opacity 0.3s ease;
 }
 
@@ -449,17 +453,55 @@ main {
 }
 
 .dropbtn .arrow-down {
-    border: solid #add8e6; /* Ubah warna sesuai dropbtn */
-    border-width: 0 3px 3px 0;
+    border: solid #d8a07c; /* Warna panah disesuaikan dengan teks */
+    border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
 
-/* Optional: Untuk mengatur jarak antar item di dropdown-content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* PERUBAHAN: Latar belakang gelap yang serasi */
+    background-color: #2c2f33; 
+    min-width: 180px; /* Sedikit lebih lebar */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+    border-radius: 8px; /* Sudut lebih membulat */
+    right: 0;
+    top: 100%;
+    margin-top: 10px; /* Jarak lebih pas dari tombol */
+    /* PERUBAHAN: Border dengan warna aksen */
+    border: 1px solid #d8a07c; 
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    /* PERUBAHAN: Warna teks terang agar terbaca */
+    color: #e9ecef !important; 
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s; /* Transisi halus */
+}
+
+.dropdown-content a:hover {
+    /* PERUBAHAN: Efek hover yang lebih menarik */
+    background-color: #d8a07c; 
+    color: #1C1d23 !important; /* Teks menjadi gelap saat hover */
+}
+
+/* Tampilkan dropdown ketika JavaScript menambahkan kelas 'show' */
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* PERUBAHAN: Garis pemisah antar item yang sesuai tema gelap */
 .dropdown-content a + a {
-    border-top: 1px solid #eee; /* Garis pemisah antar item dropdown */
+    border-top: 1px solid #4a4c57; 
 }
 
 

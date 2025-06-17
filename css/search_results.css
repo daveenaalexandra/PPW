@@ -1,0 +1,130 @@
+/* File: css/search_results.css */
+/* Style khusus untuk halaman hasil pencarian */
+
+/* Layout Utama Halaman */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.page-title {
+    color: #DDB59A; /* Warna tan hangat dari tema Anda */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title span {
+    color: #ffffff; /* Warna putih untuk kata kunci pencarian */
+    font-style: italic;
+}
+
+/* Header untuk setiap bagian hasil (Produk/Kegiatan) */
+.results-section-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e9ecef;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #666774; /* Garis pemisah abu-abu dari tema */
+}
+
+.results-section-header span {
+    font-size: 1.2rem;
+    color: #DDB59A;
+    font-weight: normal;
+}
+
+/* Grid untuk menampilkan hasil pencarian */
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Jarak antar kartu */
+}
+
+
+/* Styling Kartu Hasil (Mengadaptasi dari index.css) */
+.product-card, .activity-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover, .activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.product-card-link, .activity-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card-image, .activity-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-card-content, .activity-card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card-title, .activity-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item-price {
+    font-size: 1rem;
+    color: #d8a07c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.activity-card-info {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Tombol "Lihat Detail" */
+.btn-view-detail-small {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #343640;
+    color: #c7c8c8;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.btn-view-detail-small:hover {
+    background-color: #DDB59A;
+    color: #FFFFFF;
+}
+
+/* Pesan jika tidak ada hasil */
+.message.info {
+    background-color: rgba(102, 103, 116, 0.5); /* Warna abu-abu transparan */
+    border: 1px solid #666774;
+    color: #f1f1f1;
+}

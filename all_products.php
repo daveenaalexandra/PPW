@@ -15,7 +15,7 @@ $current_page = 1; // Inisialisasi variabel halaman saat ini
 
 if (isset($conn) && $conn instanceof mysqli) {
     // --- PENAMBAHAN BAGIAN A: TENTUKAN VARIABEL PAGINATION ---
-    $items_per_page = 4; // Tampilkan 8 produk per halaman. Anda bisa ubah angka ini.
+    $items_per_page = 3; // Tampilkan 8 produk per halaman. Anda bisa ubah angka ini.
     $current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
     if ($current_page < 1) $current_page = 1;
 

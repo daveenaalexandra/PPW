@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['place_order'])) {
     
     // ===== PERUBAHAN 2: Ambil HANYA produk dari keranjang =====
     $cart_products = $_SESSION['cart']['products'] ?? [];
+    $cart_activities = $_SESSION['cart']['activities'] ?? [];
 
     if (!$totalAmount || !$shippingAddress || !$paymentMethod) {
         header("Location: " . $redirect_url_failure . "?status=error&message=" . urlencode("Data pesanan tidak lengkap."));
@@ -86,13 +87,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['place_order'])) {
         }
         $stmt_item->close();
         $stmt_stock->close();
-
+        if (!empty($cart_activities)) {
+            $stmt_reg = $conn->prepare("INSERT INTO event_registrations (activity_id, user_id, status) VALUES (?, ?, 'confirmed')");
+            foreach ($cart_activities as $item) {
+                $stmt_reg->bind_param("ii", $item['activity_id'], $userId);
+                $stmt_reg->execute();
+            }
+            $stmt_reg->close();
+        }
         // (Di sini nanti kita akan tambahkan logika untuk memproses kegiatan)
 
         $conn->commit();
 
         // ===== PERUBAHAN 4: Hapus HANYA produk dari keranjang =====
-        unset($_SESSION['cart']['products']);
+        unset($_SESSION['cart']);
         
         // Simpan order_id untuk halaman konfirmasi
         $_SESSION['last_order_id'] = $orderId; 

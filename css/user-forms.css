@@ -1,15 +1,36 @@
 /* File: css/user-forms.css */
-/* Berisi style untuk halaman login dan registrasi */
+/* Style untuk halaman login.php dan register.php */
 
-.user-form-container {
-    max-width: 450px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* --- Layout Utama Halaman --- */
+.page-container.form-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* 100% tinggi viewport dikurangi tinggi navbar */
+    padding: 40px 15px;
 }
 
+/* --- Judul Halaman --- */
+.page-title {
+    color: #DDB59A; /* Warna tan hangat dari tema Anda */
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* --- Kotak Form Utama --- */
+.user-form {
+    width: 100%;
+    max-width: 450px; /* Lebar maksimum form */
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px; /* Sudut lebih membulat */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border: 1px solid #e9ecef;
+}
+
+/* --- Elemen Form (Label, Input) --- */
 .user-form .form-group {
     margin-bottom: 20px;
 }
@@ -19,55 +40,68 @@
     margin-bottom: 8px;
     font-weight: bold;
     color: #555;
+    font-size: 0.95rem;
 }
 
 .user-form input[type="text"],
 .user-form input[type="email"],
 .user-form input[type="password"] {
     width: 100%;
-    padding: 12px;
+    padding: 12px 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px; /* Sudut input lebih membulat */
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.user-form input:focus {
+.user-form input[type="text"]:focus,
+.user-form input[type="email"]:focus,
+.user-form input[type="password"]:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #d8a07c; /* Warna aksen tan saat di-klik */
+    box-shadow: 0 0 0 3px rgba(216, 160, 124, 0.25);
 }
 
+/* --- Tombol Submit --- */
 .btn-submit-user-form {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #007BFF;
+    background-color: #1C1d23; /* Warna gelap dari navbar */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-submit-user-form:hover {
-    background-color: #0056b3;
+    background-color: #343640; /* Warna charcoal saat hover */
+    transform: translateY(-2px);
 }
 
+/* --- Link Beralih (ke Register/Login) --- */
 .form-switch-link {
     text-align: center;
     margin-top: 20px;
-    font-size: 0.95rem;
-    background-color: aliceblue;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .form-switch-link a {
-    color: #007BFF;
+    color: #de8047; /* Warna aksen oranye/tan */
     text-decoration: none;
     font-weight: bold;
 }
 
 .form-switch-link a:hover {
     text-decoration: underline;
+}
+
+/* --- Penyesuaian untuk Pesan Error/Sukses --- */
+.message {
+    width: 100%;
+    max-width: 450px;
 }

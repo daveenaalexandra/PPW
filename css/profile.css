@@ -1,150 +1,193 @@
 /* File: css/profile.css */
-/* Style khusus untuk halaman profil pengguna */
+/* Style khusus untuk halaman profile.php */
+
+/* --- Layout Utama Halaman Profil --- */
+.page-container {
+    max-width: 1100px;
+}
 
 .profile-page .card-style {
-    background-color: #fff;
+    background-color: #ffffff;
+    color: #333;
     padding: 25px 30px;
     margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
 }
 
 .profile-page h2 {
-    color: #004A99;
-    margin-top: 0;
+    font-weight: bold;
+    color: #1C1d23;
     margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-/* Layout Form Info Akun */
-.profile-info-block .form-group { margin-bottom: 15px; }
-.profile-info-block .form-group label { font-weight: bold; color: #555; }
-.profile-info-block input, .profile-info-block select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-.profile-info-block small { font-size: 0.8rem; color: #777; }
-
-/* Alamat */
-.addresses-list .address-item {
-    padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    background-color: #fdfdfd;
-}
-.address-item[data-default="true"] {
-    background-color: #e6ffe6;
-    border-color: #66bb6a;
-}
-.address-actions { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
-
-/* Tabel Data Umum */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9em;
-}
-.data-table th, .data-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-.data-table thead { background-color: #f2f2f2; }
-
-/* Riwayat Pesanan */
-.order-history-item {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-}
-.order-history-item h4 { margin: 0 0 15px 0; color: #333; }
-.order-history-item p { margin: 0 0 8px 0; }
-.data-table-nested { font-size: 0.95em; }
-
-/* File: css/profile.css */
-/* ... (style lain yang sudah ada) ... */
-
-/* Style untuk Blok Informasi Akun */
-.profile-info-block {
-    padding: 30px 40px;
-}
-
-/* Layout utama 2 kolom: foto di kiri, form di kanan */
+/* --- Blok Info Akun Utama (Foto & Form) --- */
 .profile-info-layout {
     display: flex;
-    flex-wrap: wrap; /* Agar responsif di layar kecil */
-    gap: 40px; /* Jarak antara kolom foto dan kolom form */
-    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-/* Kolom Kiri: Foto Profil */
 .profile-pic-container {
     flex: 1;
-    min-width: 200px;
+    min-width: 220px;
     text-align: center;
 }
 
-.profile-pic-container p strong {
-    font-size: 1.2em;
-    color: #333;
-}
-
 #profile-pic-preview {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
-    object-fit: cover; /* Memastikan gambar terisi dengan baik */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
     border: 4px solid #e9ecef;
+    margin-bottom: 15px;
     background-color: #f8f9fa;
-    margin-top: 10px;
 }
 
-/* Kolom Kanan: Detail & Form */
 .profile-details-container {
-    flex: 2.5; /* Memberi lebih banyak ruang untuk form */
+    flex: 2.5;
     min-width: 300px;
 }
 
-.profile-details-container p {
-    font-size: 1.1em;
-    margin-bottom: 12px;
-}
-
-/* Form di dalam kolom kanan */
-.profile-details-form {
-    margin-top: 20px;
-}
-
 .profile-details-form .form-group {
-    display: grid;
-    /* Kolom 1 untuk label, Kolom 2 untuk input */
-    grid-template-columns: 180px 1fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px; /* Jarak antar baris form */
+    margin-bottom: 15px;
 }
 
 .profile-details-form label {
+    flex-basis: 150px; /* Lebar tetap untuk label */
     font-weight: bold;
     color: #555;
-    text-align: right; /* Label rata kanan agar dekat dengan input */
 }
 
-.profile-details-form input[type="text"],
-.profile-details-form input[type="date"],
-.profile-details-form select,
-.profile-details-form input[type="file"] {
+.profile-details-form input,
+.profile-details-form select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.profile-details-form input:focus,
+.profile-details-form select:focus {
+    outline: none;
+    border-color: #d8a07c;
+    box-shadow: 0 0 0 3px rgba(216, 160, 124, 0.25);
+}
+
+
+/* --- Blok Alamat Pengguna --- */
+.address-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.address-item strong {
+    color: #de8047;
+}
+
+.address-item small {
+    font-style: italic;
+    color: #28a745;
+}
+
+.address-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Form Tambah/Edit Alamat yang tersembunyi */
+#addressFormContainer {
+    border-top: 2px dashed #e0e0e0;
+    margin-top: 30px !important;
+    padding-top: 25px !important;
+}
+
+
+/* --- Blok Riwayat (Kegiatan & Pesanan) --- */
+.data-table {
     width: 100%;
-    max-width: 350px; /* Batasi lebar input agar tidak terlalu panjang */
+    border-collapse: collapse;
 }
 
-.profile-details-form small {
-    grid-column: 2 / 3; /* Posisikan teks 'Maks 2MB' di bawah input */
-    margin-top: -10px;
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
 }
 
-/* Tombol Perbarui Profil */
-.profile-details-form .btn-sm {
-    grid-column: 2 / 3; /* Sejajarkan tombol dengan kolom input */
-    justify-self: start; /* Posisikan tombol di awal kolom (rata kiri) */
+.data-table thead th {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #495057;
+}
+
+.data-table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(221, 181, 154, 0.15);
+}
+
+/* Tabel di dalam riwayat pesanan */
+.order-history-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.data-table-nested {
+    font-size: 0.9rem;
+}
+
+
+/* --- Penyesuaian Tombol --- */
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+#addAddressBtn, #submitAddressBtn {
+    background-color: #1C1d23;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+#addAddressBtn:hover, #submitAddressBtn:hover {
+    background-color: #343640;
 }
