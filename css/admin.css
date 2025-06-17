@@ -141,7 +141,11 @@ a:hover {
     margin-bottom: 15px;
     font-weight: bold;
 }
-
+a.widget-link,
+a.widget-link:hover {
+    text-decoration: none; /* Hapus garis bawah dari link */
+    color: inherit; /* Gunakan warna teks dari parent (dalam kasus ini, putih dari .admin-widget) */
+}
 /* Tombol-tombol aksi */
 .btn-primary { background-color: #d8a07c; border-color: #d8a07c; }
 .btn-primary:hover { background-color: #c7926b; border-color: #c7926b; }
@@ -149,3 +153,27 @@ a:hover {
 .btn-info { background-color: #17a2b8; border-color: #17a2b8; }
 .badge.bg-success { background-color: #28a745 !important; }
 .badge.bg-danger { background-color: #dc3545 !important; }
+/* --- Tombol Kembali ke Dashboard --- */
+.btn-back-to-dashboard {
+    margin-top: 25px; /* Jarak dari atas halaman */
+    display: inline-block;
+    padding: 8px 15px;
+    margin-bottom: 20px; /* Jarak dengan judul halaman di bawahnya */
+    background-color: #6c757d; /* Warna abu-abu netral */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-back-to-dashboard:hover {
+    background-color: #5a6268;
+    color: #ffffff;
+    transform: translateY(-2px); /* Efek sedikit terangkat saat hover */
+}
+
+.btn-back-to-dashboard i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}

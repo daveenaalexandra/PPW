@@ -63,6 +63,9 @@ require_once __DIR__ . '/../php/partials/header.php';
 ?>
 
 <div class="container-fluid page-container"> 
+    <a href="admin_dashboard.php" class="btn-back-to-dashboard">
+        <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
     <h1 class="page-title">Kelola Pengguna Terdaftar</h1>
     
     <?php if (isset($message)): ?>
