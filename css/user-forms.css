@@ -1,0 +1,73 @@
+/* File: css/user-forms.css */
+/* Berisi style untuk halaman login dan registrasi */
+
+.user-form-container {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.user-form .form-group {
+    margin-bottom: 20px;
+}
+
+.user-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.user-form input[type="text"],
+.user-form input[type="email"],
+.user-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.user-form input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btn-submit-user-form {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit-user-form:hover {
+    background-color: #0056b3;
+}
+
+.form-switch-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    background-color: aliceblue;
+}
+
+.form-switch-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-switch-link a:hover {
+    text-decoration: underline;
+}

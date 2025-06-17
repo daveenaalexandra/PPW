@@ -1,0 +1,92 @@
+/* File: css/product_detail.css */
+/* Style khusus untuk halaman detail produk */
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr; /* Kolom gambar sedikit lebih kecil */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.product-image-container {
+    position: sticky;
+    top: 80px; /* Jarak dari atas (setelah navbar) */
+}
+.product-card .product-card-image {
+    width: 160px; /* Lebar gambar selalu 100% dari lebar .product-card */
+    height: 160px; /* Tentukan tinggi yang seragam. Ubah angka ini sesuai selera. */
+    object-fit: cover; /* Properti kunci: scale gambar agar pas, potong sisanya, tanpa merusak rasio */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    border-bottom: 1px solid #f0f0f0; /* Garis pemisah tipis antara gambar dan konten */
+}
+.product-detail-main-image {
+    margin-top: 50px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.product-info-container .product-title {
+    font-size: 2.2em;
+    color: #de8047;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.related-activity-link {
+    font-size: 0.9em;
+    color: #343640;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.product-price-detail {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #de8047;
+    margin-bottom: 10px;
+}
+
+.product-stock-detail {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.product-stock-detail.in-stock {
+    background-color: #e6ffe6;
+    color: #3c763d;
+}
+.product-stock-detail.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.product-description {
+    margin-top: 25px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.product-action-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-add-to-cart {
+    padding: 12px 25px;
+    font-size: 1.1em;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .product-detail-layout {
+        grid-template-columns: 1fr; /* Ubah jadi 1 kolom */
+    }
+    .product-image-container {
+        position: static; /* Hapus sticky di mobile */
+    }
+}

@@ -1,0 +1,98 @@
+/* File: css/order-summary.css (Versi Final yang Rapi) */
+
+.order-confirmation-page .message.success {
+    padding: 20px;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.order-details-block {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    margin-top: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.order-details-block h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    color: #004A99;
+    font-size: 1.6em;
+}
+
+/* Grid untuk perataan detail pesanan */
+.details-grid {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Kolom 1 (label) menyesuaikan, Kolom 2 (nilai) mengisi sisa */
+    gap: 12px 20px; /* Jarak vertikal dan horizontal */
+    align-items: center;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+.detail-value {
+    color: #333;
+}
+
+.detail-value.address-value {
+    line-height: 1.6;
+}
+
+/* Untuk status pesanan agar memiliki warna */
+.status-value { font-weight: bold; }
+.status-pending { color: #f0ad4e; }
+.status-completed { color: #5cb85c; }
+.status-shipped { color: #0275d8; }
+.status-cancelled { color: #d9534f; }
+
+
+/* Judul untuk tabel "Item Pesanan" */
+.items-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 1.3em;
+    color: #333;
+}
+
+/* Tabel untuk daftar item pesanan */
+.order-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.order-items-table thead tr {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.order-items-table th,
+.order-items-table td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.order-items-table th {
+    font-weight: bold;
+    color: #495057;
+}
+
+.order-items-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Utilitas perataan teks di dalam tabel */
+.order-items-table .text-center { text-align: center; }
+.order-items-table .text-right { text-align: right; }

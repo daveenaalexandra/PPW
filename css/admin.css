@@ -1,0 +1,151 @@
+/* File: css/admin.css */
+/* Style khusus untuk semua halaman di dalam folder /admin/ */
+
+/* --- Layout & Latar Belakang Utama --- */
+body {
+    background-color: #343640; /* Latar belakang charcoal yang sama dengan situs utama */
+    color: #e9ecef; /* Warna teks default terang agar terbaca di latar gelap */
+}
+
+/* Mengatur container agar lebih lebar di halaman admin */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #DDB59A; /* Warna tan hangat untuk judul */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Mengatur warna teks untuk paragraf umum di halaman admin */
+.page-container p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+a {
+    color: #ff8c42; /* Warna link yang cerah */
+}
+a:hover {
+    color: #e07b3a;
+}
+
+
+/* --- Styling untuk Card Admin --- */
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    margin-top: 25px !important;
+    color: #333; /* Teks di dalam card kembali menjadi gelap */
+}
+
+.card-header {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+/* --- Styling untuk Tabel Admin --- */
+.table {
+    background-color: #fff;
+    color: #333; /* Teks di dalam tabel juga gelap */
+}
+
+.table thead.thead-dark, .table .thead-dark th {
+    background-color: #1C1d23; /* Header tabel pakai warna navbar */
+    color: #fff;
+    border-color: #454d55;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(221, 181, 154, 0.2);
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* --- Styling untuk Form & Tombol di Halaman Admin --- */
+.form-inline {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* --- Styling untuk Widget Dashboard --- */
+.admin-widget {
+    border-radius: 8px;
+    color: white; /* Warna teks default untuk widget */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.admin-widget .widget-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-widget .widget-icon {
+    opacity: 0.3;
+    font-size: 4rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.admin-widget .widget-text {
+    z-index: 1;
+}
+
+.admin-widget .widget-number,
+.admin-widget .widget-label {
+    color: #ffffff; /* Memastikan teks di widget selalu putih */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15); /* Bayangan agar teks lebih menonjol */
+}
+
+.admin-widget .widget-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.admin-widget .widget-label {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Warna spesifik untuk setiap widget */
+.card-users { background: linear-gradient(45deg, #17a2b8, #138496); }
+.card-orders { background: linear-gradient(45deg, #ffc107, #d39e00); }
+.card-activities { background: linear-gradient(45deg, #28a745, #218838); }
+.card-products { background: linear-gradient(45deg, #dc3545, #c82333); }
+
+/* Link navigasi kembali */
+.page-container > a {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Tombol-tombol aksi */
+.btn-primary { background-color: #d8a07c; border-color: #d8a07c; }
+.btn-primary:hover { background-color: #c7926b; border-color: #c7926b; }
+.btn-warning { background-color: #ffc107; border-color: #ffc107; color: #212529; }
+.btn-info { background-color: #17a2b8; border-color: #17a2b8; }
+.badge.bg-success { background-color: #28a745 !important; }
+.badge.bg-danger { background-color: #dc3545 !important; }

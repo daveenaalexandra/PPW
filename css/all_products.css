@@ -1,0 +1,87 @@
+/* File: css/all_products.css */
+/* Berisi style yang HANYA digunakan di halaman semua produk */
+
+.all-products-list-container {
+    padding-top: 20px;
+}
+
+.all-items-view.product-grid {
+    display: grid;
+    /* Membuat 2-4 kolom tergantung lebar layar */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px; /* Jarak antar kartu */
+}
+
+/* Menggunakan kembali style .product-card dari global.css */
+/* Namun, kita bisa menambahkan sedikit penyesuaian jika perlu */
+.all-items-view .product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.all-items-view .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.all-items-view .product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.all-items-view .product-card-image {
+    width: 100%;
+    height: 200px; /* Tinggi gambar seragam */
+    object-fit: cover;
+}
+
+.all-items-view .product-card-content {
+    padding: 15px;
+    flex-grow: 1; /* Memastikan konten mengisi sisa ruang */
+    display: flex;
+    flex-direction: column;
+}
+
+.all-items-view .product-card-title {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.all-items-view .product-item-price {
+    font-size: 1em;
+    color: #007BFF;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.all-items-view .product-card-desc {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1; /* Mendorong tombol ke bawah */
+    margin-bottom: 15px;
+}
+
+.all-items-view .btn-view-detail-small {
+    display: inline-block;
+    align-self: flex-start; /* Tombol rata kiri */
+    padding: 8px 15px;
+    background-color: #343640;
+    color: #DDB59A;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+.all-items-view .btn-view-detail-small:hover {
+    color: #343640;
+    background-color: #DDB59A;
+}

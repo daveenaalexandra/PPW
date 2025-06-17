@@ -1,0 +1,106 @@
+/* File: css/checkout.css */
+/* Style khusus untuk halaman checkout */
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Kolom summary lebih kecil */
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.checkout-summary, .card-style {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-summary, .checkout-form-block {
+    padding: 25px 30px;
+}
+
+.checkout-summary h2, .checkout-form-block h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #004A99;
+}
+
+/* Tabel ringkasan */
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.summary-table td {
+    padding: 10px 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.summary-table th {
+    padding-bottom: 10px;
+    text-align: left;
+}
+.summary-table .text-center { text-align: center; }
+.summary-table .text-right { text-align: right; }
+.summary-table tfoot td {
+    font-size: 1.2em;
+    padding-top: 15px;
+    border-bottom: none;
+}
+.summary-table tfoot .text-right {
+    color: #007bff;
+}
+
+/* Form */
+.checkout-form-block .user-form .form-control,
+.checkout-form-block .user-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.checkout-form-block .user-form textarea {
+    resize: vertical;
+}
+/* ... (kode lain di checkout.css) ... */
+
+#new_address_form_fields h4 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#new_address_form_fields .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#new_address_form_fields label {
+    flex-basis: 180px; /* Lebar tetap untuk label */
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #555;
+}
+
+#new_address_form_fields .address-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}

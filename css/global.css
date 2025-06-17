@@ -1,0 +1,657 @@
+/* Reset Dasar & Body */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+/* html { 
+    scroll-behavior: smooth; 
+} */
+body {
+    font-family: 'Arial', sans-serif; /* Ganti jika font spesifik diketahui */
+    line-height: 1.6;
+    color: #333;
+    background-color: #343640; /* Warna krem muda dari UI */
+    padding-top: 50px; /* Tinggi Navbar */
+}
+.container { 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+
+
+/* Hero Banner Section */
+.hero-banner-section {
+    width: 100%;
+    height: auto; /* Atau tinggi spesifik jika diinginkan */
+    overflow: hidden; /* Untuk memastikan gambar tidak meluap */
+}
+.hero-banner-image {
+    width: 100%;
+    height: auto; /* Menjaga rasio aspek gambar */
+    display: block; /* Menghilangkan spasi di bawah gambar */
+    max-height: 350px; /* Batas tinggi maksimal banner */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa distorsi */
+}
+
+/* Community Name Section */
+.community-name-section {
+    background-color: #FFFDE7; /* Warna krem muda dari UI */
+    padding: 25px 0;
+    text-align: center;
+}
+.community-name-block {
+    background-color: #82CFFF; /* Biru muda dari UI */
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 18px 35px;
+    display: inline-block;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+/* Detailed Product View (Styling dari respons sebelumnya masih relevan, sesuaikan jika perlu) */
+.detailed-product-view {
+    background-color: #B2E2FF; /* Warna latar biru muda dari Product Details.png */
+    padding: 20px; 
+    border-radius: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 15px;
+}
+.product-item-detail {
+    background-color: #FFFFFF; 
+    border-radius: 15px; 
+    padding-bottom: 10px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+.product-image-placeholder-detail {
+    width: calc(100% - 10px); 
+    aspect-ratio: 1 / 1;
+    background-color: rgba(220,220,220,0.2); /* Placeholder lebih jelas */
+    border-radius: 10px; 
+    margin: 5px;
+    border: 1px dashed rgba(180,180,180,0.5);
+}
+.product-detail-caption { /* Baris caption di bawah placeholder */
+    width: calc(100% - 20px); 
+    height: 20px;
+    background-color: #E0F7FA; 
+    border-radius: 10px; 
+    margin-top: 8px;
+}
+
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+/* Tambahan untuk halaman user forms, profile, activity detail */
+.page-container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.page-title {
+    text-align: center;
+    color: #d8a07c; /* Sesuaikan dengan tema Anda */
+    margin-bottom: 0;
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+.user-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-form .form-group {
+    margin-bottom: 18px;
+}
+
+.user-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #555;
+}
+
+.user-form input[type="text"],
+.user-form input[type="email"],
+.user-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-submit-user-form {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1C1d23; /* Sesuaikan */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-submit-user-form:hover {
+    background-color: #0056b3;
+}
+
+.form-switch-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+.form-switch-link a {
+    color: #007BFF;
+    text-decoration: none;
+}
+.form-switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* Pesan Error/Success */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+
+/* Profile Page */
+.profile-page .card-style {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.profile-page h3 {
+    color: #004A99;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.profile-page p { margin-bottom: 8px; }
+.activity-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.activity-list li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+}
+.activity-list li:last-child {
+    border-bottom: none;
+}
+.status-confirmed { color: green; font-weight: bold; }
+.status-waitlisted { color: orange; font-weight: bold; }
+.status-cancelled { color: red; font-weight: bold; }
+
+/* Activity Detail Page */
+.activity-detail-page .card-style {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.activity-detail-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.product-info-container {
+    margin-top: 50px;
+    background-color: #c7c8c8; /* Warna abu-abu muda */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.organizer {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+}
+.description-text {
+    line-height: 1.7;
+    color: #444;
+}
+.registration-form { margin-top: 20px; }
+.btn-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.btn-link:hover { background-color: #e0e0e0; }
+.btn-detail-activity { /* Untuk tombol di kartu kegiatan di index.php */
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.btn-detail-activity:hover { background-color: #0056b3; }
+
+/* Additional styling for product detail page if using background image */
+.product-image-placeholder-detail {
+    /* existing styles */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* or contain, depending on preference */
+    border: none; /* Remove dashed border if using actual image */
+}
+.product-detail-caption-text { /* New class for text in product detail */
+    font-size: 0.9em;
+    color: #333;
+    margin-top: 5px;
+    text-align: center;
+}
+.product-detail-subcaption-text { /* New class for subtext in product detail */
+    font-size: 0.8em;
+    color: #666;
+    text-align: center;
+}
+
+
+
+/* Navbar site title */
+.site-title-link {
+    text-decoration: none;
+}
+.site-title-nav {
+    font-size: 1.6rem; /* Sesuaikan */
+    font-weight: bold;
+    color: #004A99; /* Sesuaikan */
+}
+
+/* File: css/style.css - Tambahan untuk Tampilan Kategori Utama di Activities */
+
+
+
+/* Di style.css */
+
+/* Styling untuk halaman daftar produk semua (all_products.php) */
+.all-products-list-container {
+    padding-top: 20px;
+}
+
+
+
+/* Styling untuk link di dalam product card di all_products.php */
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.product-card-link:hover .category-item-title { /* Contoh efek hover */
+    color: #007bff;
+}
+.product-item-price { /* Styling untuk harga di all_products.php */
+    font-size: 0.9em;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Styling untuk Navbar */
+.navbar {
+    background-color: #1C1d23; /* Contoh background gelap */
+    color: #fff; /* Warna teks putih */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Untuk menghilangkan jeda dan membuatnya fixed di atas */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex; /* Menggunakan flexbox untuk layout horizontal */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Dorong item ke kanan */
+    width: 100%;
+}
+
+.navbar ul li {
+    margin-left: 20px; /* Spasi antar item */
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px; /* Sesuaikan padding agar tombol pas */
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+
+/* CSS untuk Dropdown Profil */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px; /* Agar ada spasi dari item navigasi lain */
+}
+
+.dropdown-content {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Sudut membulat */
+    right: 0; /* Posisikan ke kanan jika ingin muncul di bawah tombol */
+    top: 100%; /* Posisikan di bawah tombol */
+    margin-top: 5px; /* Sedikit spasi dari tombol */
+    border: 1px solid #ddd; /* Garis tepi */
+    overflow: hidden; /* Pastikan sudut membulat diterapkan pada konten */
+}
+
+.dropdown-content a {
+    color: black !important; /* Penting untuk override warna default navbar link */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left; /* Teks rata kiri */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Tampilkan dropdown ketika JavaScript menambahkan kelas 'show' */
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #d8a07c !important; /* Warna biru muda agar menonjol, !important untuk override */
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Spasi antara teks dan panah */
+    font-weight: bold; /* Agar mirip dengan "PROFILE (BAKER_PRO)" */
+    transition: opacity 0.3s ease;
+}
+
+.dropbtn:hover {
+    opacity: 0.8;
+}
+
+.dropbtn .arrow-down {
+    border: solid #add8e6; /* Ubah warna sesuai dropbtn */
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* Optional: Untuk mengatur jarak antar item di dropdown-content */
+.dropdown-content a + a {
+    border-top: 1px solid #eee; /* Garis pemisah antar item dropdown */
+}
+
+
+/* Pastikan tinggi ini sedikit lebih besar dari tinggi navbar Anda */
+/* Jika navbar Anda tinggi 60px, gunakan 65px atau 70px */
+#about,
+#activities,
+#product,
+#partners,
+#contact {
+    scroll-margin-top: 50px; /* Sesuaikan nilai ini dengan tinggi navbar Anda */
+}
+
+/* File: css/style.css - Tambahan untuk Halaman Profil */
+
+/* Tata letak utama halaman profil (2 kolom) */
+.profile-main-layout {
+    display: flex;
+    flex-wrap: wrap; /* Agar bisa turun ke bawah di layar kecil */
+    gap: 30px; /* Jarak antara kolom foto dan kolom info */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Kolom untuk foto profil (sebelah kiri) */
+.profile-picture-section {
+    flex: 1; /* Mengambil ruang yang tersedia */
+    min-width: 200px; /* Lebar minimum sebelum wrap */
+    text-align: center;
+}
+.profile-picture-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Tampilan preview foto profil */
+#profile-pic-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    object-fit: cover; /* Memastikan gambar terisi dengan baik tanpa distorsi */
+    border: 3px solid #ddd;
+    margin-bottom: 15px;
+    background-color: #f0f0f0; /* Warna latar jika gambar tidak ada */
+}
+
+/* Tombol custom untuk upload file */
+.btn-upload {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-upload:hover {
+    background-color: #e0e0e0;
+}
+
+/* Catatan kecil di bawah tombol upload */
+.upload-note {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 8px;
+}
+
+/* Kolom untuk informasi dan form (sebelah kanan) */
+.profile-info-section {
+    flex: 2; /* Mengambil ruang 2x lebih banyak dari kolom foto */
+    min-width: 300px;
+}
+.profile-info-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #004A99;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Menyesuaikan form di dalam halaman profil */
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+.profile-form label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="tel"],
+.profile-form input[type="date"],
+.profile-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+.profile-form input:disabled { /* Styling untuk field yang tidak bisa diubah */
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+.profile-form small {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Styling untuk bagian riwayat kegiatan di bawah form */
+.profile-activities.card-style {
+    margin-top: 30px; /* Beri jarak dari form di atasnya */
+}
+
+/* Styling untuk Search Bar di Navbar */
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Jarak antara search bar dan menu <ul> */
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Jarak antar item menu */
+}
+
+header.navbar {
+    display: flex;
+    justify-content: space-between; /* Mendorong .navbar-left dan nav ke ujung */
+    align-items: center;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Memberi jarak antara Logo dan Search Bar */
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input[type="search"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px; /* Sudut kiri bulat */
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.search-form input[type="search"]:focus {
+    border-color: #ff8c42; /* Warna highlight saat di-klik */
+}
+
+.search-form button {
+    padding: 6px 12px;
+    border: 1px solid #d8a07c; /* Warna border sesuai tema */
+    background-color: #d8a07c;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0; /* Sudut kanan bulat */
+    margin-left: -1px; /* Gabungkan dengan input field */
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #343640;
+    opacity: 0.8; /* Efek hover */
+}
+
+/* Penyesuaian untuk layar kecil (Mobile) */
+@media (max-width: 768px) {
+    .profile-main-layout {
+        flex-direction: column; /* Ubah layout menjadi satu kolom */
+        align-items: center; /* Pusatkan item */
+    }
+    .profile-info-section {
+        width: 100%; /* Gunakan lebar penuh */
+    }
+}

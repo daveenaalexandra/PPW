@@ -1,0 +1,195 @@
+/* File: css/global.css */
+/* Berisi semua style yang digunakan secara umum di seluruh situs. */
+
+/* ============================================== */
+/* == RESET DASAR & TYPOGRAPHY == */
+/* ============================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FFFDE7; /* Warna krem muda */
+    padding-top: 60px; /* Sesuaikan dengan tinggi Navbar */
+}
+
+/* ============================================== */
+/* == LAYOUT GLOBAL == */
+/* ============================================== */
+.container { 
+    width: 90%; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+main {
+    width: 100%;
+}
+.page-container {
+    padding: 40px 0;
+}
+.page-title {
+    text-align: center;
+    color: #004A99;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+/* ============================================== */
+/* == NAVBAR (HEADER) == */
+/* ============================================== */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.navbar .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar nav ul li {
+    margin-left: 20px;
+}
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+.navbar nav ul li a:hover, .navbar nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown di Navbar */
+.dropdown {
+    position: relative;
+}
+.dropbtn {
+    background-color: transparent;
+    color: #add8e6 !important;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+.dropbtn .arrow-down {
+    border: solid #add8e6;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+.dropdown.show .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* ============================================== */
+/* == KOMPONEN YANG DAPAT DIGUNAKAN KEMBALI == */
+/* ============================================== */
+
+/* Pesan Notifikasi */
+.message {
+    padding: 15px;
+    margin: 0 auto 20px auto;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid transparent;
+    max-width: 800px;
+}
+.message.success { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+.message.error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+.message.info { background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+
+/* Tombol */
+.btn-link { display: inline-block; padding: 8px 15px; background-color: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; transition: background-color 0.3s; }
+.btn-link:hover { background-color: #e0e0e0; }
+.btn-sm { padding: 8px 15px; font-size: 0.9em; cursor: pointer; border-radius: 5px; border: 1px solid #ccc; background-color: #f0f0f0; transition: background-color 0.2s, border-color 0.2s; }
+.btn-sm.btn-danger { background-color: #d9534f; color: white; border-color: #d43f3a; }
+.btn-sm.btn-danger:hover { background-color: #c9302c; }
+.btn-sm.btn-secondary { background-color: #6c757d; color: white; border-color: #5a6268; }
+.btn-submit-user-form { display: block; width: 100%; padding: 12px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
+.btn-submit-user-form:hover { background-color: #0056b3; }
+
+/* Style Dasar untuk Kartu */
+.card-style {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* ============================================== */
+/* == FOOTER == */
+/* ============================================== */
+.contact-section-footer {
+    background-color: #333;
+    color: #FFFFFF;
+    padding: 40px 0;
+}
+.contact-section-title { color: #FFFFFF; text-align: left; margin-bottom: 25px; font-size: 1.8rem; }
+.contact-content-area { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+.contact-form-wrapper { flex: 1; min-width: 300px; }
+.contact-info-wrapper { flex: 1; min-width: 300px; padding-left: 20px; }
+.contact-form-wrapper .form-group { margin-bottom: 15px; }
+.contact-form-wrapper input, .contact-form-wrapper textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #777; background-color: #555; color: white; font-size: 0.9rem; }
+.contact-form-wrapper .form-group-row { display: flex; gap: 15px; }
+.contact-form-wrapper .form-group-half { flex: 1; }
+.btn-submit-contact { background-color: #007BFF; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.social-icons { margin-bottom: 20px; display: flex; gap: 15px; }
+.social-icons img { width: 24px; height: 24px; }
+.contact-detail { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+.contact-detail img { width: 20px; height: 20px; }
