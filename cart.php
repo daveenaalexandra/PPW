@@ -54,11 +54,12 @@ $total_cart_price = 0;
                                     <label for="qty_<?php echo $product_id; ?>">Qty:</label>
                                     <input type="number" id="qty_<?php echo $product_id; ?>" name="quantity" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0" class="qty-input">
                                     <button type="submit" name="update_qty" class="btn-sm">Update</button>
-                                    <form action="<?php echo BASE_URL; ?>remove_from_cart.php" method="POST">
-                                        <input type="hidden" name="item_id" value="<?php echo $product_id; ?>">
-                                        <input type="hidden" name="item_type" value="product">
-                                        <button type="submit" name="remove_item" class="btn-sm btn-danger">Hapus</button>
-                                    </form>                                
+                                </form>
+
+                                <form action="<?php echo BASE_URL; ?>remove_from_cart.php" method="POST">
+                                    <input type="hidden" name="item_id" value="<?php echo $product_id; ?>">
+                                    <input type="hidden" name="item_type" value="product">
+                                    <button type="submit" name="remove_item" class="btn-sm btn-danger">Hapus</button>
                                 </form>
                             </div>
                         </div>
